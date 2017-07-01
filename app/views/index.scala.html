@@ -8,12 +8,14 @@
         <thead>
             <tr>
                 <th>id</th>
+                <th>@Messages("Status")</th>
                 <th>@Messages("Task")</th>
             </tr>
         </thead>
         <tbody>
             @for(task <- taskSeq) { <tr>
                 <td><a href="@routes.GetTaskController.index(task.id.get)">@task.id.get</a></td>
+                <td>@task.status</td>
                 <td>@task.content</td>
                 </tr>
                 }
